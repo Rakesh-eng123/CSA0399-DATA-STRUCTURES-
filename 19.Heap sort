@@ -1,0 +1,31 @@
+Heap_Sort (arr[], n)
+{
+     // Creating the initial Max heap
+     for i = n/2 – 1 to 0:
+        heapify(arr, n, i)
+
+     // Swapping largest element and repeating the steps further
+     for i = n-1 to 0:
+        swap(arr[0], arr[i]
+        heapify(arr, n, i)
+}
+
+Heapify (arr[], n, i)
+{
+     int largest = i;
+     int left = 2*i + 1; // Left child
+     int right = 2*i + 2; // Right child
+
+     // Check if left child exists and is larger than root
+     If (left < n && arr[left] > arr[largest]):
+        Largest = left;
+     
+     // Check if right child exists and is larger than largest
+     If (right < n && arr[right] > arr[largest]):
+        largest = right;
+     
+     // Change root, if root is not the largest
+     If(largest != i)
+        Swap(arr[i], arr[largest])
+        Heapify(arr, n, largest); //Repeat till max heap is obtained
+}
